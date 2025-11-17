@@ -66,7 +66,15 @@
       border:8px solid rgba(255,255,255,0.4);
       box-shadow:0 10px 40px rgba(255,180,200,0.3), 0 0 60px rgba(255,200,120,0.2) inset;
       animation:heartbeat 3s infinite ease-in-out;
+      transition:0.4s ease;
     }
+
+    /* ➤ HOVER EFFECT */
+    .photo:hover{
+      transform:scale(1.08);
+      box-shadow:0 10px 50px rgba(255,140,200,0.55), 0 0 80px rgba(255,200,120,0.4) inset;
+    }
+
     @keyframes heartbeat{
       0%{transform:scale(1)}
       10%{transform:scale(1.05)}
@@ -113,27 +121,35 @@
       font-weight:600;margin-top:12px;
     }
 
-    /* 🌹 ROSE PETALS ANIMATION */
-    .petal{
+    /* ✨ GOLDEN FALLING BALLS */
+    .golden-container{
       position:fixed;
-      width:32px;height:32px;
-      background-image:url('https://i.imgur.com/3ZQ3Z5z.png');
-      background-size:cover;
-      animation:fall linear forwards;
+      top:0;left:0;
+      width:100%;height:100%;
       pointer-events:none;
+      overflow:hidden;
       z-index:9999;
-      opacity:0.9;
-      filter:drop-shadow(0 5px 8px rgba(255,0,60,0.3));
     }
 
-    @keyframes fall{
-      0%{transform:translateY(-10vh) rotate(0deg)}
-      100%{transform:translateY(110vh) rotate(360deg)}
+    .golden-ball{
+      position:absolute;
+      width:15px;height:15px;
+      background:radial-gradient(circle,#ffd700,#c59b00);
+      border-radius:50%;
+      box-shadow:0 0 10px #ffd700,0 0 20px #ffea7a;
+      animation:fallBall linear infinite;
+    }
+
+    @keyframes fallBall{
+      0%{transform:translateY(-50px) scale(.8);opacity:.9}
+      100%{transform:translateY(110vh) scale(1.2);opacity:0}
     }
   </style>
 </head>
 
 <body>
+
+  <div class="golden-container"></div>  <!-- GOLDEN BALLS -->
 
   <div class="card">
     <div class="orb o1"></div>
@@ -173,27 +189,20 @@
       else{ music.pause(); btn.textContent="Play Music"; }
     };
 
-    /* 🌹 Rose Petals Generator */
-    function createPetal(){
-      const petal = document.createElement("div");
-      petal.classList.add("petal");
+    /* GOLDEN BALL GENERATOR */
+    function createGoldenBall(){
+      const b = document.createElement("div");
+      b.classList.add("golden-ball");
 
-      const left = Math.random() * window.innerWidth;
-      const duration = Math.random()*6 + 4;
-      const spin = Math.random()*360;
+      b.style.left = Math.random()*100 + "vw";
+      b.style.animationDuration = (3 + Math.random()*3) + "s";
 
-      petal.style.left = left+"px";
-      petal.style.animationDuration = duration+"s";
-      petal.style.transform = `rotate(${spin}deg)`;
-
-      document.body.appendChild(petal);
-
-      setTimeout(()=>petal.remove(), duration*1000);
+      document.querySelector(".golden-container").appendChild(b);
+      setTimeout(()=>b.remove(),6000);
     }
 
-    setInterval(createPetal, 500);
+    setInterval(createGoldenBall,180);
   </script>
 
 </body>
 </html>
-
