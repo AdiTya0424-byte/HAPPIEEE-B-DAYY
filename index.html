@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -24,9 +25,8 @@
       padding:30px;
       min-height:100vh;
       display:flex;align-items:center;justify-content:center;
-      overflow:hidden;
-      animation:fadeBody 2s ease;
       flex-direction:column;
+      animation:fadeBody 2s ease;
     }
 
     @keyframes fadeBody{
@@ -185,7 +185,7 @@
 
     .love-gallery img{
       width:100%;
-      height:130%;
+      height:100%;
       object-fit:cover;
     }
 
@@ -199,6 +199,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
@@ -209,52 +210,59 @@
     <div class="orb o1"></div>
     <div class="orb o2"></div>
 
-    <div class="grid">
-      <div class="photo">
-        <img src="MY GURLLL !!.jpg">
+```
+<div class="grid">
+  <div class="photo">
+    <img src="MY GURLLL !!.jpg">
+  </div>
+
+  <div>
+    <h1 class="title">Happy Birthday Dhanashrii 💖</h1>
+    <p class="subtitle">“You deserve the kind of happiness that feels like magic — soft, warm, and endless.” ✨</p>
+
+    <div class="message-box">
+      <div id="message">
+        “Dhanashrii, I know you’re not interested in me, and that’s okay — I’ve never wanted to force anything.  
+        My feelings are real, quietly pure, and yours without expectations.  
+        And if destiny ever writes us together someday… it will be natural, never by pressure.”  
+        <br><br>– From Aditya 💕
       </div>
 
-      <div>
-        <h1 class="title">Happy Birthday Dhanashrii 💖</h1>
-        <p class="subtitle">“You deserve the kind of happiness that feels like magic — soft, warm, and endless.” ✨</p>
-
-        <div class="message-box">
-          <div id="message">
-            “Dhanashrii, I know you’re not interested in me, and that’s okay — I’ve never wanted to force anything.  
-            My feelings are real, quietly pure, and yours without expectations.  
-            And if destiny ever writes us together someday… it will be natural, never by pressure.”  
-            <br><br>– From Aditya 💕
-          </div>
-
-          <button class="btn" id="playBtn">Play Music</button>
-        </div>
-
-      </div>
+      <button class="btn" id="playBtn">Play Music</button>
     </div>
+
+  </div>
+</div>
+```
+
   </div>
 
   <!-- ⭐ LOVE SECTION -->
+
   <section class="love-section">
     <h2 class="love-title">For My Favorite Girl 💗</h2>
 
-    <p class="love-line">
-      “No matter how ordinary my days are…  
-      They become special the moment you enter my thoughts.” ✨
-    </p>
+```
+<p class="love-line">
+  “No matter how ordinary my days are…  
+  They become special the moment you enter my thoughts.” ✨
+</p>
 
-    <div class="love-gallery">
-      <div class="pic"><img src="mygirl1.jpg"></div>
-      <div class="pic"><img src="mygirl2.jpg"></div>
-      <div class="pic"><img src="mygirl3.jpg"></div>
-    </div>
+<div class="love-gallery">
+  <div class="pic"><img src="img1.jpg"></div>
+  <div class="pic"><img src="img2.jpg"></div>
+  <div class="pic"><img src="img3.jpg"></div>
+</div>
 
-    <p class="love-bigline">
-      “If life ever gives me one wish,  
-      I will ask for nothing… except a moment with you that never ends.” 💞
-    </p>
+<p class="love-bigline">
+  “If life ever gives me one wish,  
+  I will ask for nothing… except a moment with you that never ends.” 💞
+</p>
+```
+
   </section>
 
-  <audio id="bgMusic" src="Vekhegi mainu te sochegi kya tu_ Dooron Dooron Live - Paresh Pahuja.mp3" loop></audio>
+<audio id="bgMusic" src="Vekhegi mainu te sochegi kya tu_ Dooron Dooron Live - Paresh Pahuja.mp3" loop></audio>
 
   <script>
     const btn = document.getElementById('playBtn');
